@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:4000",
-  "homepage": "https://daalgi.github.io/my-site/",
+  "homepage": "http://daalgi.github.io/my-site",
   "main": "./src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --port 4000 --compress --mode development --history-api-fallback",
     "build": "webpack --mode production --progress",
     "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json dist",
-    "serve": "serve dist"
+    "serve": "serve dist",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.12",
