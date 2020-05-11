@@ -15,19 +15,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 
 const labelColor = 'hsl(0, 0%, 80%)'
-const chartMinWidth = 500
-const chartMinHeight = 500
-const useStyles = makeStyles(theme => ({
-    chart: {
-        //width: "100%",
-        //width: "calc(100% - 320px)",
-        //minHeight: chartMinHeight,
-        //maxWidth: 600
-    },
-    title: {
-        alignContent: "middle"
-    }
-}))
 
 const SvgChart = ({ data, x, series, width, height }) => {
 
@@ -275,11 +262,12 @@ const Chart = ({
     classes
 }) =>
     <ScaleSVG width={width} height={height}
-        className={classes.contentMaxWidth}
+    //className={classes.flex}
     >
         <SvgChart
             data={data} x={x} series={series}
-            width={width} height={height}
+            width={width}
+            height={height}
         />
     </ScaleSVG>
 
@@ -287,6 +275,38 @@ const Chart = ({
 
 export default Chart
 /*
+
+    <ParentSize>
+        {parent => {
+            console.log(parent)
+            return (
+                < SvgChart
+                    data={data} x={x} series={series}
+                    width={width}
+                    height={height}
+                />
+            )
+        }
+
+        }
+    </ParentSize>
+
+
+  <ParentSize>
+      {(width, height) => <LineRadial width={width} height={height} />}
+    </ParentSize>
+
+
+        <ScaleSVG width={width} height={height}
+        //className={classes.flex}
+    >
+        <SvgChart
+            data={data} x={x} series={series}
+            width={width > 400 ? 800: 200}
+            height={width > 400 ? 500: 150}
+        />
+    </ScaleSVG>
+
 
 <ScaleSVG width={width} height={height}
      className={classes.contentMaxWidth}

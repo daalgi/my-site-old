@@ -11,7 +11,6 @@ import useStyles from '../../styles'
 import Form from './Form'
 import Chart from './Chart'
 import Analysis from './Analysis'
-import Info from './Info'
 import Help from './Help'
 
 
@@ -46,33 +45,39 @@ const Compounding = () => {
                 Investment and compounding
             </Typography>
 
-            <div className={classes.contentContainer}>
+            <div className={classes.grid}>
 
-                <div className={classes.contentColumn}>
+                <div className={classes.gridSection}>
                     <Typography variant="h6">
                         Scenario parameters
                     </Typography>
                     <Form state={state} setState={setState} classes={classes} />
                 </div>
 
-                <div className={classes.contentColumn}>
-                    <Typography variant="h6" align="center">
-                        Investment evolution
-                    </Typography>
+                <Analysis state={state} classes={classes} />
+
+                <div className={classes.gridSectionPlot}>
+
                     <Chart
                         data={state.plotData} x="year" series={["constant", "random"]}
-                        width="600" height="500"
+                        width="600" height="400"
                         classes={classes}
                     />
                 </div>
             </div>
 
-            <Analysis state={state} classes={classes} />
-
             <Help classes={classes} />
-
         </div>
     )
 }
 
 export default Compounding
+
+
+/*
+
+<Typography variant="h6" align="center">
+                        Investment evolution
+                    </Typography>
+
+*/
