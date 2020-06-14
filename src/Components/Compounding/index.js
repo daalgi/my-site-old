@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 
-import Grid from '@material-ui/core/Grid'
-import Box from '@material-ui/core/Box'
-import Paper from '@material-ui/core/Paper'
-import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 
 import useStyles from '../../styles'
 
@@ -13,6 +10,48 @@ import Chart from './Chart'
 import Analysis from './Analysis'
 import Help from './Help'
 
+
+const useLocalStyles = makeStyles(theme => ({
+    pageContainer: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: "0"
+    },
+    grid: {
+        maxWidth: "1600px",
+        margin: "auto",
+        [theme.breakpoints.up("md")]: {
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 2fr",
+            gridGap: "20px",
+            //gridTemplateRows: "auto 1fr auto",
+            alignItems: "start"
+        },
+        [theme.breakpoints.down("md")]: {
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridGap: "20px",
+            alignItems: "start"
+        },
+        [theme.breakpoints.down("xs")]: {
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center"
+        }
+    },
+    gridSection: {
+        minWidth: "220px",
+        margin: "8px auto",
+        justifySelf: "center",
+        alignSelf: "start",
+        flexBasis: "100%"
+    },
+    gridSectionPlot: {
+        minWidth: 300,
+        width: "100%"
+    }
+}))
 
 const defaultState = {
     retirementStart: {
@@ -35,28 +74,29 @@ const defaultState = {
 
 const Compounding = () => {
     const classes = useStyles()
+    const localClasses = useLocalStyles()
     const [state, setState] = useState(defaultState)
 
     console.log('render index')
     return (
-        <div className={classes.pageContainer}>
+        <div className={localClasses.pageContainer}>
 
             <Typography variant="h4" className={classes.pageTitle}>
                 Investment and compounding
             </Typography>
 
-            <div className={classes.grid}>
+            <div className={localClasses.grid}>
 
-                <div className={classes.gridSection}>
+                <div className={localClasses.gridSection}>
                     <Typography variant="h6">
                         Scenario parameters
                     </Typography>
                     <Form state={state} setState={setState} classes={classes} />
                 </div>
 
-                <Analysis state={state} classes={classes} />
+                <Analysis state={state} classes={localClasses} />
 
-                <div className={classes.gridSectionPlot}>
+                <div className={localClasses.gridSectionPlot}>
 
                     <Chart
                         data={state.plotData} x="year" series={["constant", "random"]}

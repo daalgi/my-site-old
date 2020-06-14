@@ -1,17 +1,16 @@
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
+
 import { Group } from '@vx/group'
 import { Grid } from '@vx/grid'
-import { scaleTime, scaleLinear, tickFormat } from '@vx/scale'
-import { AreaClosed, LinePath, Bar, Line } from '@vx/shape'
+import { scaleLinear } from '@vx/scale'
+import { AreaClosed, LinePath, Line } from '@vx/shape'
 import { AxisLeft, AxisBottom } from '@vx/axis'
 import { LinearGradient } from '@vx/gradient'
-import { useTooltip, Tooltip } from '@vx/tooltip'
+//import { useTooltip, Tooltip } from '@vx/tooltip'
 import { ParentSize, ScaleSVG } from '@vx/responsive'
 import { localPoint } from '@vx/event'
 import { curveLinear } from 'd3'
-import { extent, max, min, bisector } from 'd3-array'
-import { makeStyles } from '@material-ui/core/styles'
+import { max, min } from 'd3-array'
 
 
 const labelColor = 'hsl(0, 0%, 80%)'
@@ -45,14 +44,14 @@ const SvgChart = ({ data, x, series, width, height }) => {
         domain: [0, Math.max(...yValues) * 1.5],
     })
 
-    const {
+    /*const {
         tooltipData,
         tooltipLeft,
         tooltipTop,
         tooltipOpen,
         showTooltip,
         hideTooltip,
-    } = useTooltip()
+    } = useTooltip()*/
 
     //console.log(classes)
 

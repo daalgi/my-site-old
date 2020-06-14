@@ -15,7 +15,7 @@ const Analysis = ({ state, classes }) => {
                     `${convertToPercetage(state.probabilities.noBankrupcy)} of probability of still having money in ${state.lastYear.year}`,
                 ]}
                 className={classes.gridSection}
-                maxWidth={560}
+                //maxWidth={560}
             />
             <InfoCard
                 title="Scenario Analysis"
@@ -35,8 +35,8 @@ const Analysis = ({ state, classes }) => {
                     ${convertToK(state.lastYear.random)}`,
                     state.yearBankrupcy.random ? `- No money left in ${state.yearBankrupcy.random}` : "",
                 ]}
-                className={classes.contentColumn}
-                maxWidth={560}
+                className={classes.gridSection}
+                //maxWidth={560}
             />
 
         </div>

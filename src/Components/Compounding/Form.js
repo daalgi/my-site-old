@@ -109,7 +109,7 @@ const Form = ({ state, setState, classes }) => {
             />
 
             <Button className={classes.formItem}
-                type="submit" variant="contained" name="btn1">
+                type="submit" variant="contained" name="btn">
                 Run experiment
             </Button>
 

@@ -1,122 +1,23 @@
 import { makeStyles } from '@material-ui/core/styles'
 
+const contentMaxWidth = "1200px"
+
 const useStyles = makeStyles(theme => ({
-    flex: {
-        flex: 1,
-        alignItems: "top",
-        flexBasis: "100%"
-    },
-    flexGrow: {
-        flexGrow: 1
-    },
     pageContainer: {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        margin: "16px"
+        margin: "0",
+        padding: 0,
+        maxWidth: contentMaxWidth,
+        minWidth: "320px",
+        margin: "0 auto"
     },
     pageTitle: {
         display: "block",
-        margin: "8px 0px 32px 0px",
+        margin: "16px 0px 32px 0px",
         width: "100%",
-        justifyContent: "center",
         textAlign: "center"
-    },
-    flexRowWrap: {
-        [theme.breakpoints.up("sm")]: {
-            display: "flex",
-            alignItems: "center"
-        }
-        /*margin: "auto",
-        maxWidth: "1800px",
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",*/
-        //display: "block"
-    },
-    grid: {
-        maxWidth: "1600px",
-        margin: "auto",
-        [theme.breakpoints.up("md")]: {
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 2fr",
-            gridGap: "20px",
-            //gridTemplateRows: "auto 1fr auto",
-            alignItems: "start"
-        },
-        [theme.breakpoints.down("md")]: {
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gridGap: "20px",
-            alignItems: "start"
-        },
-        [theme.breakpoints.down("xs")]: {
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center"
-        }
-    },
-    gridSection: {
-        minWidth: "220px",
-        margin: "8px auto",
-        justifySelf: "center",
-        alignSelf: "start",
-        flexBasis: "100%"
-    },
-    gridSectionPlot:{
-        minWidth: 300,
-        width: "100%"
-    },
-    columnLayout: {
-        maxWidth: "1800px",
-        margin: "auto",
-        [theme.breakpoints.up("md")]: {
-            columnCount: 3,
-            columnGap: "16px",
-        },
-        [theme.breakpoints.down("md")]: {
-            columnCount: 2,
-            columnGap: "16px"
-        },
-        [theme.breakpoints.down("sm")]: {
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center"
-        }
-    },
-    columnLayoutSection: {
-        breakInside: "avoid",
-        minWidth: "320px",
-        margin: "auto",
-        //flexBasis: "100%"
-    },
-
-    contentColumn: {
-        //margin: "8px",
-        //alignItems: "center",
-        //width: "46%",
-        //minWidth: "250px",
-        //height: "100%",
-        [theme.breakpoints.down('xs')]: {
-            marginBottom: "8px",
-            padding: 0,
-            //margin: "auto",
-            width: "100%",
-            //width: "100%",
-            flex: 1
-        },
-        [theme.breakpoints.up('xs')]: {
-            //margin: "auto",
-            //marginBottom: "8px",
-            //padding: 0,
-            marginBottom: "8px",
-            //width: "46%",
-            minWidth: "320px",
-            //width: "calc(50% - 250px)"
-
-        }
-        //padding: "16px",
-        //maxWidth: "300px"
     },
     pageSubtitle: {
         display: "block",
@@ -127,12 +28,8 @@ const useStyles = makeStyles(theme => ({
         marginBottom: "10px"
     },
     contentMaxWidth: {
-        //margin: "auto",
-        maxWidth: "900px",
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
+        maxWidth: contentMaxWidth,
+        margin: 16
     },
     formItem: {
         //textAlign: "center",
@@ -145,6 +42,27 @@ const useStyles = makeStyles(theme => ({
             width: "100%"
         }
     },
+
+    dataGridCell: {
+        background: "hsl(0, 0%, 20%)",
+        color: "hsl(0, 0%, 90%)",
+        textAlign: "center",
+        border: "1px solid hsl(0, 0%, 30%)",
+        width: "100%"
+    },
+    dataGridCellEditable: {
+        background: "hsl(0, 0%, 26%)",
+        color: "hsl(0, 0%, 90%)",
+        textAlign: "center",
+        border: "1px solid hsl(0, 0%, 32%)"
+    },
+    dataGridHeader: {
+        background: "hsl(0, 0%, 15%)",
+        color: "hsl(0, 0%, 90%)",
+        textAlign: "center",
+        border: "1px solid hsl(0, 0%, 30%)"
+    }
+
 }))
 
 export default useStyles

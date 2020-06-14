@@ -17,7 +17,11 @@ h1 {
     font-weight: 900;
     margin: 0.4em 0 0.6em;
 }
-
+.excel {
+    background: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 90%);
+    text-align: center;
+}
 /* placeholders */
 .placeholder {
     background: #ecf0f1;

@@ -9,9 +9,9 @@ const InfoCard = ({
     title,
     info = [],
     className = null,
-    maxWidth = null
+    //maxWidth = null
 }) =>
-    <Card className={className} style={maxWidth && { maxWidth }}>
+    <Card className={className} >
 
         <CardContent>
             <Typography gutterBottom variant="h6" component="h2">

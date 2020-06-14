@@ -1,15 +1,25 @@
 import React from 'react'
 
 import Home from './Home'
-import Finance from './Finance'
+import About from './About'
+import Portfolio from './Portfolio'
+import Contact from './Contact'
 import Compounding from './Compounding'
+import UnitsConverter from './UnitsConverter'
+import LinearRegression from './LinearRegression'
 
 
 const barRoutes = [
     {
-        label: "Finance", icon: "", path: "/finance", exact: true,
-        main: _ => <Finance />
-    }, 
+        label: "About", icon: "", path: "/about/", exact: true,
+        main: _ => <About />
+    }, {
+        label: "Portfolio", icon: "", path: "/portfolio/", exact: true,
+        main: _ => <Portfolio />
+    }, {
+        label: "Contact", icon: "", path: "/contact/", exact: true,
+        main: _ => <Contact />
+    }
 ]
 
 const internalRoutes = [
@@ -18,8 +28,14 @@ const internalRoutes = [
         main: _ => <Home />,
         //selected: ({ path, id }) => path === id
     }, {
-        label: "Compounding", icon: "", path: "/finance/compounding", exact: true,
+        label: "Compounding", icon: "", path: "/portfolio/compounding", exact: true,
         main: _ => <Compounding />
+    }, {
+        label: "Units Converter", icon: "", path: "/portfolio/units-converter", exact: true,
+        main: _ => <UnitsConverter />
+    }, {
+        label: "Linear Regression", icon: "", path: "/portfolio/linear-regression", exact: true,
+        main: _ => <LinearRegression />
     },
 ]
 
